@@ -11,8 +11,24 @@ items:
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+  - name: Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      note: Testing456<img src=x onerror=alert(1)>
+      requirements:
+        '1':
+          note: Testing123<img src=x onerror=alert(1)>
+          status: passed
+      status: null
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: Generate a Software Bill of Materials (SBOM)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
+  - name: Scan your web application for vulnerabilities
+    uses: >-
+      jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: Scan your code dependencies for vulnerabilities (SCA)
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
 
